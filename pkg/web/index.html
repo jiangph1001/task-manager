@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Task Manager</title>
+</head>
+<body>
+ <h1>Task Manager</h1>
+ <button onclick="window.location.href='/add'">Add Task</button>
+ <table>
+  <tr>
+   <th>ID</th>
+   <th>Status</th>
+   <th>Actions</th>
+  </tr>
+  {{range .}}
+  <tr>
+   <td>{{.ID}}</td>
+   <td>{{.Status}}</td>
+   <td>
+    <button onclick="window.location.href='/stop?id={{.ID}}'">Stop</button>
+    <button onclick="window.location.href='/delete?id={{.ID}}'">Delete</button>
+   </td>
+  </tr>
+  {{end}}
+ </table>
+</body>
+</html>
